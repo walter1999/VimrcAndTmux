@@ -1,0 +1,6 @@
+Top Vim Most Useful Commands:
+
+1.) f {[( -> finds one of the opening brackets 
+2.) in conjunction with above you can use % -> takes you to the closing bracket
+3.) to delete in between brackets I can use key combinatation above 
+    Vf{%d -> to delete everything within {}

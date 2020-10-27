@@ -1,5 +1,4 @@
-" Don't try to be vi compatible
-set nocompatible
+
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
@@ -14,20 +13,26 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'morhetz/gruvbox'
 Plugin 'aluriak/nerdcommenter'
 Plugin 'mileszs/ack.vim'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'neoclide/coc.nvim', { 'branch': 'release' }
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 
+"source ~/.fzf/plugin/fzf.vim
 " Turn on syntax highlighting
 syntax on
+
+set rtp+=/usr/local/opt/fzf
 
 " For plugins to load correctly
 filetype plugin indent on
 
 " TODO: Pick a leader key
-let mapleader = ","
+let mapleader = " "
 
 " Security
 set modelines=0
@@ -106,8 +111,15 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 
 " Color scheme
-colorscheme molokai
+colorscheme gruvbox
+set bg=dark
 
+" coc-shortcuts
+nmap <leader>gd <Plugin>(coc-definition)
+nmap <leader>gr <Plugin>(coc-reference)
+
+"Gfiles
+nnoremap <C-p> :GFiles<CR>
 
 " Nerd Tree configuration
 map <C-z> :NERDTreeToggle<CR>
