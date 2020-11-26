@@ -16,9 +16,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
 Plugin 'aluriak/nerdcommenter'
 Plugin 'mileszs/ack.vim'
-Plugin 'neoclide/coc.nvim', { 'branch': 'release' }
+Plugin 'neoclide/coc.nvim'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'pboettch/vim-cmake-syntax'
 
 call vundle#end()
 
@@ -31,7 +32,6 @@ set rtp+=/usr/local/opt/fzf
 " For plugins to load correctly
 filetype plugin indent on
 
-" TODO: Pick a leader key
 let mapleader = " "
 
 " Security
